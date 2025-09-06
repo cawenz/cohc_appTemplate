@@ -1,0 +1,465 @@
+/* Enhanced SCSS with minimal navbar height */
+
+/* Base Typography - inspired by the academic document */
+body {
+  font-family: 'Manrope', sans-serif;
+  line-height: 1.6;
+  color: #000000;
+  background-color: #FFFFFF;
+  font-size: 16px;
+}
+
+/* Navbar customization with minimal height */
+.navbar {
+  background-color: #602D89 !important;
+  border-bottom: 2px solid #251230;
+  min-height: 48px;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(37, 18, 48, 0.1);
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  
+  .container-fluid {
+    align-items: center;
+    min-height: 48px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+/* Logo styling - static positioning to match title behavior */
+.navbar-logo {
+  height: 20px;
+  width: auto;
+  position: static;
+  margin-right: 1.5rem;
+  display: inline-block;
+}
+
+/* Navbar brand container to hold both logo and title */
+.navbar-brand {
+  color: #FFFFFF !important;
+  font-weight: 600;
+  line-height: 1.2; /* Slightly increased for better alignment */
+  margin: 0;
+  display: flex;
+  align-items: center; /* Back to center alignment */
+  justify-content: flex-start;
+  font-size: 1rem;
+  letter-spacing: -0.25px;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  margin-left: 5%;
+  
+  /* Fine-tune logo alignment for 1rem text */
+  img {
+    vertical-align: middle;
+    margin-top: 0.06rem; /* Small adjustment for perfect alignment with 1rem text */
+    flex-shrink: 0;
+  }
+}
+
+.navbar-nav {
+  margin-left: 1rem; /* Space between title and nav items */
+  
+  .nav-link {
+    color: #FFFFFF !important;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    font-size: 0.76rem; /* Reduced by 20% */
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    
+    &:hover {
+      color: #F4EDEC !important;
+      border-bottom-color: #F4EDEC;
+    }
+    
+    &.active {
+      color: #F4EDEC !important;
+      border-bottom-color: #F4EDEC;
+    }
+  }
+}
+
+/* Enhanced Typography Hierarchy - inspired by HTML document */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Gelasio', serif;
+  color: #251230;
+  font-weight: normal;
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
+
+h1 {
+  font-size: 2.1rem;
+  font-weight: normal;
+  letter-spacing: -0.5px;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #602D89;
+  color: #602D89;
+}
+
+h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: #251230;
+}
+
+h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #602D89;
+  margin-bottom: 0.75rem;
+}
+
+/* Enhanced paragraph styling */
+p {
+  margin-bottom: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Key findings and highlights - inspired by HTML document */
+.key-finding, .alert-info {
+  background: #F4EDEC;
+  border-left: 4px solid #602D89;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+  border-radius: 0 4px 4px 0;
+  
+  h3, h4 {
+    color: #602D89;
+    margin-top: 0;
+    font-size: 1.2rem;
+  }
+  
+  p {
+    margin-bottom: 0.75rem;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* Enhanced Card styling - more elegant approach */
+.card {
+  border: 1px solid #AC9E94;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(37, 18, 48, 0.08);
+  margin-bottom: 1.5rem;
+  background: #FFFFFF;
+  
+  .card-header {
+    background-color: #F4EDEC;
+    border-bottom: 1px solid #AC9E94;
+    color: #251230;
+    padding: 1rem 1.25rem;
+    font-weight: 600;
+    
+    h1, h2, h3, h4, h5, h6 {
+      margin-bottom: 0;
+      color: #251230;
+    }
+  }
+  
+  .card-body {
+    padding: 1.25rem;
+  }
+  
+  .card-footer {
+    background-color: #FAFAFA;
+    border-top: 1px solid #AC9E94;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+    color: #666;
+  }
+}
+
+/* Stats grid - inspired by HTML document */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+
+.stat-card {
+  background: #FAFAFA;
+  padding: 1.5rem;
+  border: 1px solid #AC9E94;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    box-shadow: 0 4px 12px rgba(37, 18, 48, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  .stat-number {
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: #602D89;
+    font-family: 'Manrope', sans-serif;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  
+  .stat-label {
+    color: #666;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+  }
+}
+
+/* Enhanced Table styling - academic document inspired */
+.table, table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.95rem;
+  background: #FFFFFF;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(37, 18, 48, 0.08);
+  
+  th {
+    background: #602D89;
+    color: #FFFFFF;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    border: none;
+  }
+  
+  td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #F4EDEC;
+    color: #444;
+    
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  
+  tr {
+    &:nth-child(even) {
+      background: #FAFAFA;
+    }
+    
+    &:hover {
+      background: #F4EDEC;
+    }
+    
+    &:last-child td {
+      border-bottom: none;
+    }
+  }
+}
+
+/* Enhanced Button styling */
+.btn-primary {
+  background-color: #602D89;
+  border-color: #602D89;
+  color: #FFFFFF;
+  font-weight: 500;
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  
+  &:hover, &:focus {
+    background-color: #251230;
+    border-color: #251230;
+    color: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(37, 18, 48, 0.2);
+    transform: translateY(-1px);
+  }
+}
+
+.btn-secondary {
+  background-color: #AC9E94;
+  border-color: #AC9E94;
+  color: #FFFFFF;
+  
+  &:hover, &:focus {
+    background-color: #251230;
+    border-color: #251230;
+    color: #FFFFFF;
+  }
+}
+
+/* Highlight and emphasis classes - from HTML document */
+.highlight {
+  background: #fff3cd;
+  padding: 2px 6px;
+  font-weight: 600;
+  border-radius: 3px;
+}
+
+.emphasis {
+  font-weight: 600;
+  color: #602D89;
+}
+
+/* Note boxes and alerts */
+.note-box, .alert-warning {
+  background: #F4EDEC;
+  border: 1px solid #AC9E94;
+  padding: 1rem;
+  margin: 1.25rem 0;
+  font-size: 0.95rem;
+  color: #666;
+  border-radius: 6px;
+  
+  strong {
+    color: #251230;
+  }
+}
+
+/* Section styling */
+.section-intro {
+  font-size: 1.05rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* Container and layout improvements - minimal spacing */
+.container-fluid {
+  padding: 0.5rem 1.5rem; /* Reduced top/bottom from 1rem to 0.5rem */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Remove default Bootstrap margins that might be adding space */
+.nav-content {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Ensure page content starts immediately after navbar */
+body {
+  padding-top: 0 !important;
+}
+
+/* Target the main content area specifically */
+.tab-content {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Remove any extra spacing from nav panels */
+.tab-pane {
+  padding-top: 0 !important;
+}
+
+/* Override any Bootstrap spacing utilities */
+.container-fluid > * {
+  margin-top: 0 !important;
+  
+  &:first-child {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
+
+/* List styling improvements */
+ul, ol {
+  margin-left: 1.5rem;
+  margin-top: 0.75rem;
+  color: #444;
+  
+  li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+  }
+}
+
+/* Form controls */
+.form-control, .form-select {
+  border: 1px solid #AC9E94;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  
+  &:focus {
+    border-color: #602D89;
+    box-shadow: 0 0 0 0.2rem rgba(96, 45, 137, 0.25);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container-fluid {
+    padding: 0.75rem 1rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .navbar-logo {
+    height: 18px;
+  }
+  
+  .navbar {
+    min-height: 44px;
+    
+    .container-fluid {
+      min-height: 44px;
+    }
+  }
+  
+  /* Adjust form elements for mobile */
+  .shiny-input-container {
+    margin-bottom: 0.75rem;
+  }
+  
+  .form-control, .form-select {
+    font-size: 1rem; /* Prevent zoom on iOS */
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .sidebar {
+    padding: 1rem;
+  }
+  
+  .main-panel {
+    padding: 1rem;
+  }
+}
