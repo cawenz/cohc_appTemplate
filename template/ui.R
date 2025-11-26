@@ -1,4 +1,10 @@
+library(bslib)
+library(shiny)
+library(tidyverse)
+library(gt)
+
 source("theme/cohc_bslib.R")
+source("config/app_config.R")
 
 # Load functions and navs
 listFunctions <- list.files("functions/", full.names = TRUE)
@@ -10,7 +16,8 @@ lapply(listNavs, source)
 # Define your navigation items here
 nav_items <- function(prefix) {
   list(
-    example_nav  # Replace with your actual nav panels
+    example_nav,  # Basic example
+    gt_demo       # GT theme demonstration
     # Add more nav panels as needed
   )
 }

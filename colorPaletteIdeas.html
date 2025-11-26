@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holy Cross Color Palette</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Gelasio:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background: #FFFFFF;
+            margin: 0;
+            padding: 20px;
+            color: #333333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-family: 'Gelasio', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #251230;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666666;
+            font-style: italic;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+        
+        .palette-section {
+            margin-bottom: 50px;
+            background: #FAFAFA;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(37, 18, 48, 0.08);
+        }
+        
+        .palette-title {
+            font-family: 'Gelasio', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #602D89;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .palette-description {
+            text-align: center;
+            color: #666666;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+        
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .color-grid-5 {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .color-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+        }
+        
+        .color-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .color-swatch {
+            height: 80px;
+            width: 100%;
+        }
+        
+        .color-info {
+            padding: 12px;
+            text-align: center;
+        }
+        
+        .color-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #333333;
+            margin-bottom: 4px;
+        }
+        
+        .color-hex {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: #666666;
+            background: #F5F5F5;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        
+        .copy-message {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #602D89;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .copy-message.show {
+            opacity: 1;
+        }
+        
+        .usage-example {
+            background: #F4EDEC;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid #602D89;
+        }
+        
+        .usage-title {
+            font-weight: 600;
+            color: #602D89;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+        
+        .code-example {
+            background: #251230;
+            color: #F4EDEC;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            overflow-x: auto;
+        }
+        
+        @media (max-width: 768px) {
+            .color-grid-5 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .palette-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Color ideas for Holy Cross Shiny Apps</h1>
+        <p class="subtitle">Brand colors and data visualization palette for Highcharter,gt,and ggplot themes</p>
+        
+        <!-- Brand Colors -->
+        <div class="palette-section">
+            <h2 class="palette-title">Brand Colors</h2>
+            <p class="palette-description">Core Holy Cross brand colors for backgrounds, headers, and accent elements</p>
+            <div class="color-grid">
+                <div class="color-card" onclick="copyColor('#602D89')">
+                    <div class="color-swatch" style="background-color: #602D89"></div>
+                    <div class="color-info">
+                        <div class="color-name">Primary Purple</div>
+                        <div class="color-hex">#602D89</div>
+                    </div>
+                </div>
+                <div class="color-card" onclick="copyColor('#251230')">
+                    <div class="color-swatch" style="background-color: #251230"></div>
+                    <div class="color-info">
+                        <div class="color-name">Dark Purple</div>
+                        <div class="color-hex">#251230</div>
+                    </div>
+                </div>
+                <div class="color-card" onclick="copyColor('#C89B4B')">
+                    <div class="color-swatch" style="background-color: #C89B4B"></div>
+                    <div class="color-info">
+                        <div class="color-name">Gold</div>
+                        <div class="color-hex">#C89B4B</div>
+                    </div>
+                </div>
+                <div class="color-card" onclick="copyColor('#F1C46E')">
+                    <div class="color-swatch" style="background-color: #F1C46E"></div>
+                    <div class="color-info">
+                        <div class="color-name">Light Gold</div>
+                        <div class="color-hex">#F1C46E</div>
+                    </div>
+                </div>
+                <div class="color-card" onclick="copyColor('#698CC1')">
+                    <div class="color-swatch" style="background-color: #698CC1"></div>
+                    <div class="color-info">
+                        <div class="color-name">Blue</div>
+                        <div class="color-hex">#698CC1</div>
+                    </div>
+                </div>
+                <div class="color-card" onclick="copyColor('#325385')">
+                    <div class="color-swatch" style="background-color: #325385"></div>
+                    <div class="color-info">
+                        <div class="color-name">Dark Blue</div>
+                        <div class="color-hex">#325385</div>
+                    </div>
+                </div>
+                <div class="color-card" onclick="copyColor('#175F4E')">
+                    <div class="color-swatch" style="background-color: #175F4E"></div>
+                    <div class="color-info">
+                        <div class="color-name">Green</div>
+                        <div class="color-hex">#175F4E</div>
+                    </div>
+                </div>
+                <div class="color-card" onclick="copyColor('#0C4336')">
+                    <div class="color-swatch" style="background-color: #0C4336"></div>
+                    <div class="color-info">
+                        <div class="color-name">Dark Green</div>
+                        <div class="color-hex">#0C4336</div>
+                    </div>
+                </div>
+                <div class="color-card" onclick="copyColor('#AC9E94')">
+                    <div class="color-swatch" style="background-color: #AC9E94"></div>
+                    <div class="color-info">
+                        <div class="color-name">Beige</div>
+                        <div class="color-hex">#AC9E94</div>
+                    </div>
+                </div>
+                <div class="color-card" onclick="copyColor('#F4EDEC')">
+                    <div class="color-swatch" style="background-color: #F4EDEC"></div>
+                    <div class="color-info">
+                        <div class="color-name">Light Beige</div>
+                        <div class="color-hex">#F4EDEC</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 10-Color Data Palette -->
+        <div class="palette-section">
+            <h2 class="palette-title">10-Color Data Visualization Palette</h2>
+            <p class="palette-description">Optimized for charts and graphs with good contrast and visual distinction</p>
+            <div class="color-grid-5">
+                <div class="color-card" onclick="copyColor('#602D89')">
+                    <div class="color-swatch" style="background-color: #602D89"></div>
+                    <div class="color-info">
+                        <div class="color-name">Holy Cross Purple</div>
+                        <div class="color-hex">#602D89</div>
+                    </div>
+                </div>
+                <div class="color-card" onclick="copyColor('#2E86AB')">
+                    <div class="color-swatch" style="background-color: #2E86AB"></div>
+                    <div class="color-info">
+                        <div class="color-name">Bright Blue</div>
+                        <div class="color-hex">#2E86AB</div>
+                    </div>
+                </div>
+                <div class="color-card" onclick="copyColor('#A23B72')">
+                    <div class="color-swatch" style="background-color: #A23B72"></div>
+                    <div class="color-info">
+                        <div class="color-name">Burgundy</div>
+                        <div class="color-hex">#A23B72</div>
+                    </div>
+                </div>
+                <div class="color-card" onclick="copyColor('#F18F01')">
+                    <div class="color-swatch" style="background-color: #F18F01"></div>
+                    <div class="color-info">
+                        <div class="color-name">Warm Orange</div>
+                        <div class="color-hex">#F18F01</div>
+                    </div>
+                </div>
+                <div class="color-card" onclick="copyColor('#C73E1D')">
+                    <div class="color-swatch" style="background-color: #C73E1D"></div>
+                    <div class="color-info">
+                        <div class="color-name">Deep Red</div>
+                        <div class="color-hex">#C73E1D</div>
+                    </div>
+                </div>
+                <div class="color-card" onclick="copyColor('#175F4E')">
+                    <div class="color-swatch" style="background-color: #175F4E"></div>
+                    <div class="color-info">
+                        <div class="color-name">HC Green</div>
+                        <div class="color-hex">#175F4E</div>
+                    </div>
+                </div>
+                <div class="color-card" onclick="copyColor('#C89B4B')">
+                    <div class="color-swatch" style="background-color: #C89B4B"></div>
+                    <div class="color-info">
+                        <div class="color-name">HC Gold</div>
+                        <div class="color-hex">#C89B4B</div>
+                    </div>
+                </div>
+                <div class="color-card" onclick="copyColor('#4D5D53')">
+                    <div class="color-swatch" style="background-color: #4D5D53"></div>
+                    <div class="color-info">
+                        <div class="color-name">Dark Sage</div>
+                        <div class="color-hex">#4D5D53</div>
+                    </div>
+                </div>
+                <div class="color-card" onclick="copyColor('#698CC1')">
+                    <div class="color-swatch" style="background-color: #698CC1"></div>
+                    <div class="color-info">
+                        <div class="color-name">HC Blue</div>
+                        <div class="color-hex">#698CC1</div>
+                    </div>
+                </div>
+                <div class="color-card" onclick="copyColor('#6B46C1')">
+                    <div class="color-swatch" style="background-color: #6B46C1"></div>
+                    <div class="color-info">
+                        <div class="color-name">Bright Purple</div>
+                        <div class="color-hex">#6B46C1</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="usage-example">
+                <div class="usage-title">Highcharter Usage:</div>
+                <div class="code-example">hc_colors$palette_10 &lt;- c(<br>
+&nbsp;&nbsp;"#602D89", "#2E86AB", "#A23B72", "#F18F01", "#C73E1D",<br>
+&nbsp;&nbsp;"#175F4E", "#C89B4B", "#4D5D53", "#698CC1", "#6B46C1"<br>
+)</div>
+            </div>
+        </div>
+        
+        <!-- Subset Palettes -->
+        <div class="palette-section">
+            <h2 class="palette-title">Subset Palettes</h2>
+            <p class="palette-description">Smaller palettes for simpler visualizations</p>
+            
+            <h3 style="color: #602D89; margin-bottom: 15px; font-size: 1.1rem;">5-Color Palette</h3>
+            <div class="color-grid-5">
+                <div class="color-card" onclick="copyColor('#602D89')">
+                    <div class="color-swatch" style="background-color: #602D89"></div>
+                    <div class="color-info">
+                        <div class="color-name">HC Purple</div>
+                        <div class="color-hex">#602D89</div>
+                    </div>
+                </div>
+                <div class="color-card" onclick="copyColor('#2E86AB')">
+                    <div class="color-swatch" style="background-color: #2E86AB"></div>
+                    <div class="color-info">
+                        <div class="color-name">Bright Blue</div>
+                        <div class="color-hex">#2E86AB</div>
+                    </div>
+                </div>
+                <div class="color-card" onclick="copyColor('#F18F01')">
+                    <div class="color-swatch" style="background-color: #F18F01"></div>
+                    <div class="color-info">
+                        <div class="color-name">Warm Orange</div>
+                        <div class="color-hex">#F18F01</div>
+                    </div>
+                </div>
+                <div class="color-card" onclick="copyColor('#175F4E')">
+                    <div class="color-swatch" style="background-color: #175F4E"></div>
+                    <div class="color-info">
+                        <div class="color-name">HC Green</div>
+                        <div class="color-hex">#175F4E</div>
+                    </div>
+                </div>
+                <div class="color-card" onclick="copyColor('#C89B4B')">
+                    <div class="color-swatch" style="background-color: #C89B4B"></div>
+                    <div class="color-info">
+                        <div class="color-name">HC Gold</div>
+                        <div class="color-hex">#C89B4B</div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 style="color: #602D89; margin-bottom: 15px; margin-top: 30px; font-size: 1.1rem;">3-Color Palette</h3>
+            <div class="color-grid" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="color-card" onclick="copyColor('#602D89')">
+                    <div class="color-swatch" style="background-color: #602D89"></div>
+                    <div class="color-info">
+                        <div class="color-name">HC Purple</div>
+                        <div class="color-hex">#602D89</div>
+                    </div>
+                </div>
+                <div class="color-card" onclick="copyColor('#2E86AB')">
+                    <div class="color-swatch" style="background-color: #2E86AB"></div>
+                    <div class="color-info">
+                        <div class="color-name">Bright Blue</div>
+                        <div class="color-hex">#2E86AB</div>
+                    </div>
+                </div>
+                <div class="color-card" onclick="copyColor('#F18F01')">
+                    <div class="color-swatch" style="background-color: #F18F01"></div>
+                    <div class="color-info">
+                        <div class="color-name">Warm Orange</div>
+                        <div class="color-hex">#F18F01</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sequential Palette -->
+        <div class="palette-section">
+            <h2 class="palette-title">Sequential Palette</h2>
+            <p class="palette-description">Purple-based progression ideal for heatmaps and single-variable intensity visualization</p>
+            <div class="color-grid-5">
+                <div class="color-card" onclick="copyColor('#F7F4F9')">
+                    <div class="color-swatch" style="background-color: #F7F4F9"></div>
+                    <div class="color-info">
+                        <div class="color-name">Lightest</div>
+                        <div class="color-hex">#F7F4F9</div>
+                    </div>
+                </div>
+                <div class="color-card" onclick="copyColor('#C2A5CF')">
+                    <div class="color-swatch" style="background-color: #C2A5CF"></div>
+                    <div class="color-info">
+                        <div class="color-name">Light</div>
+                        <div class="color-hex">#C2A5CF</div>
+                    </div>
+                </div>
+                <div class="color-card" onclick="copyColor('#9970AB')">
+                    <div class="color-swatch" style="background-color: #9970AB"></div>
+                    <div class="color-info">
+                        <div class="color-name">Medium</div>
+                        <div class="color-hex">#9970AB</div>
+                    </div>
+                </div>
+                <div class="color-card" onclick="copyColor('#762A83')">
+                    <div class="color-swatch" style="background-color: #762A83"></div>
+                    <div class="color-info">
+                        <div class="color-name">Dark</div>
+                        <div class="color-hex">#762A83</div>
+                    </div>
+                </div>
+                <div class="color-card" onclick="copyColor('#40004B')">
+                    <div class="color-swatch" style="background-color: #40004B"></div>
+                    <div class="color-info">
+                        <div class="color-name">Darkest</div>
+                        <div class="color-hex">#40004B</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Diverging Palette -->
+        <div class="palette-section">
+            <h2 class="palette-title">Diverging Palette</h2>
+            <p class="palette-description">Orange (warning/negative) to neutral to blue-green (positive/good) - perfect for performance metrics</p>
+            <div class="color-grid-5">
+                <div class="color-card" onclick="copyColor('#B35806')">
+                    <div class="color-swatch" style="background-color: #B35806"></div>
+                    <div class="color-info">
+                        <div class="color-name">Strong Warning</div>
+                        <div class="color-hex">#B35806</div>
+                    </div>
+                </div>
+                <div class="color-card" onclick="copyColor('#F1A340')">
+                    <div class="color-swatch" style="background-color: #F1A340"></div>
+                    <div class="color-info">
+                        <div class="color-name">Warning</div>
+                        <div class="color-hex">#F1A340</div>
+                    </div>
+                </div>
+                <div class="color-card" onclick="copyColor('#F7F7F7')">
+                    <div class="color-swatch" style="background-color: #F7F7F7"></div>
+                    <div class="color-info">
+                        <div class="color-name">Neutral</div>
+                        <div class="color-hex">#F7F7F7</div>
+                    </div>
+                </div>
+                <div class="color-card" onclick="copyColor('#5AAE61')">
+                    <div class="color-swatch" style="background-color: #5AAE61"></div>
+                    <div class="color-info">
+                        <div class="color-name">Good</div>
+                        <div class="color-hex">#5AAE61</div>
+                    </div>
+                </div>
+                <div class="color-card" onclick="copyColor('#1B7837')">
+                    <div class="color-swatch" style="background-color: #1B7837"></div>
+                    <div class="color-info">
+                        <div class="color-name">Very Good</div>
+                        <div class="color-hex">#1B7837</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="usage-example">
+                <div class="usage-title">Usage Examples:</div>
+                <div class="code-example">
+# Sequential for heatmaps:<br>
+sequential_purple &lt;- c("#F7F4F9", "#C2A5CF", "#9970AB", "#762A83", "#40004B")<br><br>
+# Diverging for performance metrics:<br>
+diverging_performance &lt;- c("#B35806", "#F1A340", "#F7F7F7", "#5AAE61", "#1B7837")
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="copy-message" id="copy-message">Color code copied to clipboard!</div>
+    
+    <script>
+        function copyColor(hex) {
+            navigator.clipboard.writeText(hex).then(() => {
+                const message = document.getElementById('copy-message');
+                message.classList.add('show');
+                setTimeout(() => {
+                    message.classList.remove('show');
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
